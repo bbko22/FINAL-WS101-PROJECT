@@ -1,24 +1,395 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>bespoke-web-emporium</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtisanHub - Local Artisan Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>ArtisanHub</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#" class="nav-link" onclick="showSection('homepage')">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#" class="nav-link" onclick="showSection('about')">
+                    <i class="fas fa-info-circle"></i> About
+                </a>
+                <a href="#" class="nav-link" onclick="showSection('products')">
+                    <i class="fas fa-store"></i> Products
+                </a>
+                <a href="#" class="nav-link cart-link" onclick="showSection('cart')">
+                    <i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <a href="#" class="nav-link" onclick="showSection('profile')" id="profile-link" style="display: none;">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+                <a href="#" class="nav-link" onclick="showSection('login')" id="login-link">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="#" class="nav-link" onclick="logout()" id="logout-link" style="display: none;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+            <div class="nav-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
-    <meta property="og:title" content="bespoke-web-emporium" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Homepage (Guest Mode) -->
+    <section id="homepage" class="section active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Local Artisan Treasures</h1>
+                <p class="hero-subtitle">Connect with talented artisans in your community and find unique, handcrafted items</p>
+                <div class="search-container">
+                    <input type="text" placeholder="Search for unique artisan products..." class="search-input" id="search-input">
+                    <button class="search-btn" onclick="searchProducts()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+        <div class="featured-section">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid" id="featured-products">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        <div class="stories-section">
+            <h2 class="section-title">Artisan Stories</h2>
+            <div class="stories-grid" id="artisan-stories">
+                <!-- Stories will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login" class="section">
+        <div class="login-container">
+            <div class="login-form">
+                <h2>Welcome Back</h2>
+                <p>Choose your role to continue</p>
+                
+                <div class="role-selection">
+                    <button class="role-btn" onclick="setRole('consumer')">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Consumer</span>
+                        <small>Browse and purchase artisan products</small>
+                    </button>
+                    <button class="role-btn" onclick="setRole('artisan')">
+                        <i class="fas fa-palette"></i>
+                        <span>Artisan</span>
+                        <small>Sell your handcrafted items</small>
+                    </button>
+                    <button class="role-btn" onclick="setRole('admin')">
+                        <i class="fas fa-cog"></i>
+                        <span>Admin</span>
+                        <small>Manage the platform</small>
+                    </button>
+                </div>
+
+                <div class="login-inputs" id="login-inputs" style="display: none;">
+                    <input type="email" placeholder="Email" id="email-input">
+                    <input type="password" placeholder="Password" id="password-input">
+                    <button class="login-btn" onclick="login()">Sign In</button>
+                    <p class="demo-text">Demo: Any email/password will work for demonstration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consumer Dashboard -->
+    <section id="consumer-dashboard" class="section dashboard">
+        <div class="dashboard-header">
+            <h2>Consumer Dashboard</h2>
+            <div class="dashboard-actions">
+                <button class="action-btn" onclick="showSection('notifications')">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button class="action-btn" onclick="showSection('settings')">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="dashboard-content">
+            <div class="products-feed" id="consumer-products">
+                <!-- Products feed will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Artisan Dashboard -->
+    <section id="artisan-dashboard" class="section dashboard">
+        <div class="dashboard-header">
+            <h2>Artisan Dashboard</h2>
+            <div class="dashboard-actions">
+                <button class="action-btn" onclick="showSection('add-product')">
+                    <i class="fas fa-plus"></i> Add Product
+                </button>
+                <button class="action-btn" onclick="showSection('notifications')">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button class="action-btn" onclick="showSection('settings')">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="dashboard-tabs">
+            <button class="tab-btn active" onclick="showArtisanTab('my-products')">My Products</button>
+            <button class="tab-btn" onclick="showArtisanTab('orders')">Orders</button>
+            <button class="tab-btn" onclick="showArtisanTab('analytics')">Analytics</button>
+        </div>
+
+        <div class="dashboard-content">
+            <div id="my-products" class="tab-content active">
+                <div class="products-grid" id="artisan-products">
+                    <!-- Artisan's products will be loaded here -->
+                </div>
+            </div>
+            <div id="orders" class="tab-content">
+                <div class="orders-list" id="artisan-orders">
+                    <!-- Orders will be loaded here -->
+                </div>
+            </div>
+            <div id="analytics" class="tab-content">
+                <div class="analytics-dashboard">
+                    <h3>Sales Analytics</h3>
+                    <p>Analytics features coming soon...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard -->
+    <section id="admin-dashboard" class="section dashboard">
+        <div class="dashboard-header">
+            <h2>Admin Dashboard</h2>
+        </div>
+        
+        <div class="admin-grid">
+            <div class="admin-card" onclick="showAdminSection('users')">
+                <i class="fas fa-users"></i>
+                <h3>User Management</h3>
+                <p>Manage platform users</p>
+            </div>
+            <div class="admin-card" onclick="showAdminSection('products')">
+                <i class="fas fa-box"></i>
+                <h3>Product Approval</h3>
+                <p>Review and approve listings</p>
+            </div>
+            <div class="admin-card" onclick="showAdminSection('reports')">
+                <i class="fas fa-flag"></i>
+                <h3>Reports</h3>
+                <p>Handle user reports</p>
+            </div>
+            <div class="admin-card" onclick="showAdminSection('analytics')">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Platform Analytics</h3>
+                <p>View platform statistics</p>
+            </div>
+        </div>
+
+        <div class="admin-content" id="admin-content">
+            <!-- Admin content will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Product Details Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('product-modal')">&times;</span>
+            <div id="product-details">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div id="add-product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('add-product-modal')">&times;</span>
+            <h2>Add New Product</h2>
+            <form id="add-product-form">
+                <input type="text" placeholder="Product Name" id="product-name" required>
+                <textarea placeholder="Product Description" id="product-description" required></textarea>
+                <input type="number" placeholder="Price ($)" id="product-price" required>
+                <input type="text" placeholder="Category" id="product-category" required>
+                <textarea placeholder="Your Story (Why did you create this?)" id="product-story" required></textarea>
+                <input type="file" accept="image/*" id="product-image">
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <section id="cart" class="section">
+        <div class="cart-container">
+            <h2>Shopping Cart</h2>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <h3>Total: $<span id="cart-total">0.00</span></h3>
+                </div>
+                <button class="checkout-btn" onclick="showSection('checkout')">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section id="checkout" class="section">
+        <div class="checkout-container">
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <div class="checkout-section">
+                    <h3>Shipping Information</h3>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" placeholder="Address" required>
+                    <input type="text" placeholder="City" required>
+                    <input type="text" placeholder="State" required>
+                    <input type="text" placeholder="ZIP Code" required>
+                </div>
+                
+                <div class="checkout-section">
+                    <h3>Payment Method</h3>
+                    <div class="payment-options">
+                        <label><input type="radio" name="payment" value="card"> Credit Card</label>
+                        <label><input type="radio" name="payment" value="paypal"> PayPal</label>
+                        <label><input type="radio" name="payment" value="cash"> Cash on Delivery</label>
+                    </div>
+                </div>
+                
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Settings Section -->
+    <section id="settings" class="section">
+        <div class="settings-container">
+            <h2>Settings</h2>
+            <div class="settings-grid">
+                <div class="setting-item" onclick="showSection('help')">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Help & Support</span>
+                </div>
+                <div class="setting-item" onclick="showSection('privacy')">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy</span>
+                </div>
+                <div class="setting-item" onclick="showSection('feedback')">
+                    <i class="fas fa-comment"></i>
+                    <span>Feedback</span>
+                </div>
+                <div class="setting-item" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="section">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <h2 id="profile-name">User Profile</h2>
+                    <p id="profile-role">Consumer</p>
+                </div>
+            </div>
+            <div class="profile-content" id="profile-content">
+                <!-- Profile content will be loaded based on user role -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="about-container">
+            <h2>About ArtisanHub</h2>
+            <p>ArtisanHub is a platform dedicated to connecting local artisans with customers who appreciate handcrafted, unique items. We believe in supporting local creativity and sustainable commerce.</p>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Direct Connection</h3>
+                    <p>Connect directly with artisans and learn their stories</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainable</h3>
+                    <p>Support sustainable, local craftsmanship</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-heart"></i>
+                    <h3>Unique Items</h3>
+                    <p>Find one-of-a-kind handcrafted treasures</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ArtisanHub</h3>
+                <p>Connecting local artisans with customers who appreciate handcrafted, unique items.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> hello@artisanhub.com</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>We believe in supporting local creativity and sustainable commerce through our platform.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ArtisanHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Report Modal -->
+    <div id="report-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('report-modal')">&times;</span>
+            <h2>Report Content</h2>
+            <form id="report-form">
+                <select id="report-reason" required>
+                    <option value="">Select a reason</option>
+                    <option value="inappropriate">Inappropriate content</option>
+                    <option value="spam">Spam</option>
+                    <option value="harassment">Harassment</option>
+                    <option value="copyright">Copyright violation</option>
+                    <option value="other">Other</option>
+                </select>
+                <textarea placeholder="Additional details (optional)" id="report-details"></textarea>
+                <button type="submit">Submit Report</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
