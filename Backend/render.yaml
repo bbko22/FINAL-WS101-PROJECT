@@ -3,7 +3,7 @@
     name: artisan-ecommerce
     env: java
     rootDir: .
-    buildCommand: "./mvnw.cmd clean package -DskipTests"
+    buildCommand: "./mvnw clean package -DskipTests"
     startCommand: "java -Dserver.port=$PORT -jar target/*.jar"
     envVars:
       - key: SPRING_PROFILES_ACTIVE
