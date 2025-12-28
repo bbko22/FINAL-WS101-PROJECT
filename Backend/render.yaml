@@ -1,0 +1,15 @@
+﻿services:
+  - type: web
+    name: artisan-ecommerce
+    env: java
+    rootDir: .
+    buildCommand: "./mvnw.cmd clean package -DskipTests"
+    startCommand: "java -Dserver.port=$PORT -jar target/*.jar"
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: production
+      - key: JAVA_VERSION
+        value: 17
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /actuator/health

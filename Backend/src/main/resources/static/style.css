@@ -941,6 +941,13 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(5px);
 }
 
+/* Add Product image preview */
+#product-image-preview { display: block; max-height: 200px; object-fit: cover; }
+
+/* Inline form messages */
+.form-message { font-size: 0.95rem; padding: 0.5rem 0.75rem; border-radius: 8px; }
+.form-message.error { background: #fff1f0; color: #c62828; border: 1px solid #f5c6c6; }
+.form-message.success { background: #f0fff4; color: #256029; border: 1px solid #cfe9d3; }
 .modal.active {
     display: flex;
     align-items: center;

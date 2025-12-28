@@ -1,4 +1,3 @@
-
 // Global State Management
 let currentUser = null;
 let currentRole = null;
@@ -10,21 +9,21 @@ let reports = [];
 
 // Sample Data
 const sampleProducts = [
-    { id: 1, name: "Maturan Pili Nuts", price: 200.00, description: "Premium roasted pili nuts; fresh and crunchy.", story: "Hand-crafted and roasted by local producers to maintain a traditional flavor.", artisan: "Maturan Farms", location: "Bicol, Philippines", category: "Food", inStock: true, image: "images/1.jpg" },
-    { id: 2, name: "Taro Chips", price: 120.00, description: "Crispy taro chips made from fresh taro roots.", story: "Thinly sliced and fried for a light, crunchy snack.", artisan: "Tarlac Snacks Co.", location: "Tarlac, Philippines", category: "Food", inStock: true, image: "images/2.jpg" },
-    { id: 3, name: "Pinyato", price: 80.00, description: "Sweet and crunchy peanut candy with caramelized sugar.", story: "A classic crowd-favorite sweet made in traditional small batches.", artisan: "Sweet Treats", location: "Iloilo, Philippines", category: "Food", inStock: true, image: "images/3.jpg" },
-    { id: 4, name: "Abaniko Hand Fan", price: 50.00, description: "Handwoven abaniko fan crafted from natural fibers.", story: "Handmade by local artisans using time-honored techniques.", artisan: "Abaniko Co.", location: "Cebu, Philippines", category: "Home", inStock: true, image: "images/4.jpg" },
-    { id: 5, name: "Handwoven Buri Hat", price: 100.00, description: "Buri hat made from natural palm leaves for sun protection.", story: "Lightweight, breathable and handwoven from locally harvested buri leaves.", artisan: "WeaveCraft", location: "Leyte, Philippines", category: "Wearables", inStock: true, image: "images/5.jpg" },
-    { id: 6, name: "Coconut Floor Polish Scrub", price: 95.00, description: "Eco-friendly coconut shell scrub for polishing floors.", story: "Made from upcycled coconut shells and natural oils.", artisan: "EcoHome", location: "Mindanao, Philippines", category: "Home", inStock: true, image: "images/6.jpg" },
-    { id: 7, name: "Capiz Shell Wind Chime", price: 350.00, description: "Decorative wind chime made with translucent capiz shells.", story: "Delicately assembled by coastal artisans.", artisan: "Capiz Creations", location: "Palawan, Philippines", category: "Decor", inStock: true, image: "images/7.jpg" },
-    { id: 8, name: "Rattan Furniture Set", price: 1200.00, description: "Hand-woven rattan furniture perfect for home or garden.", story: "Durable and lightweight rattan furniture hand-crafted by skilled weavers.", artisan: "RattanWorks", location: "Laguna, Philippines", category: "Furniture", inStock: true, image: "images/wlis.jpg" },
-    { id: 9, name: "Brass Decorative Plate", price: 280.00, description: "Intricately engraved brass plate.", story: "Traditional engraving passed down through generations.", artisan: "Zamboanga Brass", location: "Zamboanga, Philippines", category: "Decor", inStock: true, image: "images/oip/OIP.jpg" },
-    { id: 10, name: "Lumpia Clay Pot", price: 395.00, description: "Traditional clay pot for preparing and serving favorites.", story: "Glazed and fired using traditional methods.", artisan: "ClayHouse", location: "Pampanga, Philippines", category: "Kitchen", inStock: true, image: "images/wlis.jpg" },
-    { id: 11, name: "T'boli Beaded Necklace", price: 520.00, description: "Beaded necklace with traditional T'boli patterns.", story: "Hand-beaded with local motifs.", artisan: "T'boli Artisans", location: "South Cotabato, Philippines", category: "Jewelry", inStock: true, image: "images/oip/OIP.jpg" },
-    { id: 12, name: "Barong Tagalog Fabric", price: 850.00, description: "Premium hand-embroidered Barong Tagalog fabric.", story: "Intricately embroidered by experienced weavers.", artisan: "Heritage Weaves", location: "Bicol, Philippines", category: "Fabric", inStock: true, image: "images/wlis.jpg" },
-    { id: 13, name: "Coconut Shell Bowls", price: 245.00, description: "Eco-friendly bowls handcrafted from coconut shells.", story: "Sustainably made from coconut shells and sealed for durability.", artisan: "CocoCraft", location: "Iloilo, Philippines", category: "Kitchen", inStock: true, image: "images/oip/OIP.jpg" },
-    { id: 14, name: "Piña Cloth Hand Fan", price: 380.00, description: "Hand fan made from piña cloth.", story: "Light and delicate fiber handwoven into elegant fans.", artisan: "PinaTextiles", location: "Aklan, Philippines", category: "Wearables", inStock: true, image: "images/wlis.jpg" },
-    { id: 15, name: "Inlaid Mother of Pearl Box", price: 650.00, description: "Ornate wooden box with mother of pearl inlay.", story: "Traditional inlay work from Iloilo artisans.", artisan: "Pearl Inlays", location: "Iloilo, Philippines", category: "Decor", inStock: true, image: "images/oip/OIP.jpg" }
+    { id: 1, name: "Puto", price: 6.00, description: "A soft, fluffy Filipino steamed rice cake with a mildly sweet taste, perfect as a snack or paired with savory dishes.", story: "Hand-crafted and roasted by local producers to maintain a traditional flavor.", artisan: "Maturan Farms", location: "Bicol, Philippines", category: "Food", inStock: true, image: "images/1.jpg" },
+    { id: 2, name: "Rice Cake", price: 25.00, description: "A soft, lightly sweet cake made from rice flour, commonly steamed or baked and enjoyed as a simple snack or dessert.", story: "Thinly sliced and fried for a light, crunchy snack.", artisan: "Tarlac Snacks Co.", location: "Tarlac, Philippines", category: "Food", inStock: true, image: "images/2.jpg" },
+    { id: 3, name: "Kakanin Combo", price: 120.00, description: "A variety of traditional Filipino rice-based delicacies in one set, offering different flavors and textures, perfect for sharing or merienda.", story: "A classic crowd-favorite sweet made in traditional small batches.", artisan: "Sweet Treats", location: "Iloilo, Philippines", category: "Food", inStock: true, image: "images/3.jpg" },
+    { id: 4, name: "Binagol", price: 70.00, description: "A sweet Filipino dessert made from taro, coconut milk, and sugar, traditionally served in a coconut shell.", story: "Handmade by local artisans using time-honored techniques.", artisan: "Abaniko Co.", location: "Cebu, Philippines", category: "Home", inStock: true, image: "images/4.jpg" },
+    { id: 5, name: "Banig", price: 200.00, description: "A handwoven mat made from dried leaves, used for sleeping, sitting, or as a decorative piece.", story: "Lightweight, breathable and handwoven from locally harvested buri leaves.", artisan: "WeaveCraft", location: "Leyte, Philippines", category: "Wearables", inStock: true, image: "images/5.jpg" },
+    { id: 6, name: "Rixy Woven Straw Wall Basket", price: 95.00, description: "A lightweight, handwoven straw basket designed for wall display, adding natural texture and decorative storage to any space.", story: "Made from upcycled coconut shells and natural oils.", artisan: "EcoHome", location: "Mindanao, Philippines", category: "Home", inStock: true, image: "images/6.jpg" },
+    { id: 7, name: "Conical Hat", price: 50.00, description: "A lightweight, wide-brim hat with a cone shape that provides sun and rain protection.", story: "Delicately assembled by coastal artisans.", artisan: "Capiz Creations", location: "Palawan, Philippines", category: "Decor", inStock: true, image: "images/7.jpg" },
+    { id: 8, name: "Hand Woven Lidded Basket", price: 95.00, description: "A durable, handwoven basket with a fitted lid for neat storage and natural decor.", story: "Durable and lightweight rattan furniture hand-crafted by skilled weavers.", artisan: "RattanWorks", location: "Laguna, Philippines", category: "Furniture", inStock: true, image: "images/8.jpg" },
+    { id: 9, name: "Barong", price: 295.00, description: "A traditional Filipino formal shirt made from lightweight fabric, worn for special occasions.", story: "Traditional engraving passed down through generations.", artisan: "Zamboanga Brass", location: "Zamboanga, Philippines", category: "Decor", inStock: true, image: "images/9.jpg" },
+    { id: 10, name: "Walis Tambo", price: 125.00, description: "A traditional Filipino broom made from tiger grass, used for sweeping floors.", story: "Glazed and fired using traditional methods.", artisan: "ClayHouse", location: "Pampanga, Philippines", category: "Kitchen", inStock: true, image: "images/10.jpg" },
+    { id: 11, name: "Lambanog", price: 350.00, description: "A traditional Filipino coconut wine with a strong, clear taste, often enjoyed during celebrations.", story: "Hand-beaded with local motifs.", artisan: "T'boli Artisans", location: "South Cotabato, Philippines", category: "Jewelry", inStock: true, image: "images/11.jpg" },
+    { id: 12, name: "Bracelet", price: 20.00, description: "A handcrafted bracelet made with unique materials and designs, adding a personal and stylish touch.", story: "Intricately embroidered by experienced weavers.", artisan: "Heritage Weaves", location: "Bicol, Philippines", category: "Fabric", inStock: true, image: "images/12.jpg" },
+    { id: 13, name: "Winnowing Tray", price: 50.00, description: "A handcrafted bracelet made from woven winnowing tray material, featuring a natural, rustic design.", story: "Sustainably made from coconut shells and sealed for durability.", artisan: "CocoCraft", location: "Iloilo, Philippines", category: "Kitchen", inStock: true, image: "images/13.jpg" },
+    { id: 14, name: "Handmade Crocheted Flowers", price: 100.00, description: "Handcrafted yarn flowers with detailed stitching, perfect for décor or gifts.", story: "Light and delicate fiber handwoven into elegant fans.", artisan: "PinaTextiles", location: "Aklan, Philippines", category: "Wearables", inStock: true, image: "images/14.jpg" },
+    { id: 15, name: "Tobacco Dry Leaves", price: 130.00, description: "Naturally dried tobacco leaves used for traditional smoking, crafting, or processing.", story: "Traditional inlay work from Iloilo artisans.", artisan: "Pearl Inlays", location: "Iloilo, Philippines", category: "Decor", inStock: true, image: "images/15.jpg" }
 ];
 
 const sampleStories = [
@@ -108,6 +107,9 @@ function initializeApp() {
         updateNavigation();
         showDashboard();
     }
+
+    // Ensure nav links are visible (fix for missing links)
+    ensureNavVisibility();
 
     // Load persisted artisan products (if any)
     loadSavedProducts();
@@ -194,13 +196,6 @@ function closeMobileMenu() {
 }
 
 // Navigation Functions
-// showSection is implemented once later in this file to avoid duplicates.
-
-function toggleMobileMenu() {
-    const navMenu = document.getElementById('nav-menu');
-    navMenu.classList.toggle('active');
-}
-
 function updateNavigation() {
     const loginLink = document.getElementById('login-link');
     const logoutLink = document.getElementById('logout-link');
@@ -215,6 +210,21 @@ function updateNavigation() {
         logoutLink.style.display = 'none';
         profileLink.style.display = 'none';
     }
+}
+
+// Ensure navigation links are visible and consistent (fix for missing About/Cart/Login)
+function ensureNavVisibility() {
+    const loginLink = document.getElementById('login-link');
+    const logoutLink = document.getElementById('logout-link');
+    const profileLink = document.getElementById('profile-link');
+    const cartLink = document.querySelector('.cart-link');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (loginLink) loginLink.style.display = 'block';
+    if (logoutLink && currentUser) logoutLink.style.display = 'block';
+    if (profileLink && currentUser) profileLink.style.display = 'block';
+    if (cartLink) cartLink.style.display = 'inline-flex';
+    if (navMenu) navMenu.style.display = 'flex';
 }
 
 // Authentication Functions
@@ -544,15 +554,23 @@ function loadCartItems() {
     const container = document.getElementById('cart-items');
     const totalElement = document.getElementById('cart-total');
     
+    if (!container) {
+        console.error('Cart items container not found');
+        return;
+    }
+    
     if (cart.length === 0) {
         container.innerHTML = `
             <div class="empty-state">
                 <i class="fas fa-shopping-cart"></i>
                 <h3>Your cart is empty</h3>
                 <p>Start shopping to add items to your cart</p>
+                <button class="btn btn-primary" onclick="showSection('products')">
+                    <i class="fas fa-store"></i> Browse Products
+                </button>
             </div>
         `;
-        totalElement.textContent = '0.00';
+        if (totalElement) totalElement.textContent = '0.00';
         return;
     }
     
@@ -566,7 +584,7 @@ function loadCartItems() {
         cartItem.className = 'cart-item';
         cartItem.innerHTML = `
             <div class="cart-item-image">
-                <img src="${item.image}" alt="${item.name}" class="cart-item-img" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="${item.image}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div class="cart-item-info">
                 <h4 class="cart-item-name">${item.name}</h4>
@@ -587,7 +605,7 @@ function loadCartItems() {
         container.appendChild(cartItem);
     });
     
-    totalElement.textContent = total.toFixed(2);
+    if (totalElement) totalElement.textContent = total.toFixed(2);
 }
 
 // Artisan Functions
@@ -987,28 +1005,58 @@ document.getElementById('checkout-form').addEventListener('submit', function(e) 
 // Artisan Stories
 function loadArtisanStories() {
     const container = document.getElementById('artisan-stories');
-    container.innerHTML = '';
+    const aboutContainer = document.getElementById('about-artisan-stories');
     
-    sampleStories.forEach(story => {
-        const storyCard = document.createElement('div');
-        storyCard.className = 'story-card';
-        storyCard.innerHTML = `
-            <div class="story-header">
-                <div class="artisan-avatar">
-                    ${story.avatar}
-                </div>
-                <div class="artisan-info">
-                    <h4>${story.artisan}</h4>
-                    <p class="location">${story.location}</p>
-                </div>
-            </div>
-            <div class="story-content">
-                <p class="story-text">${story.story}</p>
-            </div>
-        `;
+    if (container) {
+        container.innerHTML = '';
         
-        container.appendChild(storyCard);
-    });
+        sampleStories.forEach(story => {
+            const storyCard = document.createElement('div');
+            storyCard.className = 'story-card';
+            storyCard.innerHTML = `
+                <div class="story-header">
+                    <div class="artisan-avatar">
+                        ${story.avatar}
+                    </div>
+                    <div class="artisan-info">
+                        <h4>${story.artisan}</h4>
+                        <p class="location">${story.location}</p>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <p class="story-text">${story.story}</p>
+                </div>
+            `;
+            
+            container.appendChild(storyCard);
+        });
+    }
+    
+    // Also load stories in about section if it exists
+    if (aboutContainer) {
+        aboutContainer.innerHTML = '';
+        
+        sampleStories.forEach(story => {
+            const storyCard = document.createElement('div');
+            storyCard.className = 'story-card';
+            storyCard.innerHTML = `
+                <div class="story-header">
+                    <div class="artisan-avatar">
+                        ${story.avatar}
+                    </div>
+                    <div class="artisan-info">
+                        <h4>${story.artisan}</h4>
+                        <p class="location">${story.location}</p>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <p class="story-text">${story.story}</p>
+                </div>
+            `;
+            
+            aboutContainer.appendChild(storyCard);
+        });
+    }
 }
 
 // Profile Functions
@@ -1137,11 +1185,14 @@ document.addEventListener('click', function(e) {
 });
 
 // Handle search on Enter key
-document.getElementById('search-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        searchProducts();
-    }
-});
+const searchInput = document.getElementById('search-input');
+if (searchInput) {
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            searchProducts();
+        }
+    });
+}
 
 // Handle window resize for mobile menu
 window.addEventListener('resize', function() {
@@ -1178,6 +1229,9 @@ function showSection(sectionId) {
                 loadFeaturedProducts();
                 loadArtisanStories();
                 break;
+            case 'about':
+                loadArtisanStories(); // Load stories in about section
+                break;
             case 'consumer-dashboard':
                 loadConsumerFeed();
                 break;
@@ -1194,6 +1248,93 @@ function showSection(sectionId) {
             case 'profile':
                 loadUserProfile();
                 break;
+            case 'login':
+                // Reset login form
+                const li = document.getElementById('login-inputs');
+                if (li) li.style.display = 'none';
+                const roleBtns = document.querySelectorAll('.role-btn');
+                roleBtns.forEach(btn => btn.classList.remove('selected'));
+                selectedRole = null;
+                break;
+        }
+
+        // Defensive check: ensure section content exists (fallbacks)
+        ensureSectionContent(sectionId);
+    }
+
+    // Ensure section has content if some loader failed
+    function ensureSectionContent(sectionId) {
+        const target = document.getElementById(sectionId);
+        if (!target) return;
+        // If section already has visible children or text, assume OK
+        if (target.children.length > 0 && target.innerText.trim() !== '') return;
+
+        console.warn(`ensureSectionContent: ${sectionId} appears empty — applying fallback.`);
+
+        switch(sectionId) {
+            case 'about':
+                target.innerHTML = `
+                    <div class="about-container">
+                        <h2>About ArtisanHub</h2>
+                        <p>ArtisanHub connects local artisans with customers who appreciate handcrafted, unique items. We support local creativity and sustainable commerce.</p>
+                    </div>
+                `;
+                break;
+            case 'cart':
+                // Try to run loader, otherwise render a simple empty cart message
+                if (document.getElementById('cart-items')) {
+                    loadCartItems();
+                } else {
+                    target.innerHTML = `
+                        <div class="cart-container">
+                            <h2>Shopping Cart</h2>
+                            <div class="cart-items" id="cart-items">
+                                <div class="empty-state">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <h3>Your cart is empty</h3>
+                                    <p>Start shopping to add items to your cart</p>
+                                </div>
+                            </div>
+                            <div class="cart-summary">
+                                <div class="cart-total">
+                                    <h3>Total: ₱<span id="cart-total">0.00</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                break;
+            case 'login':
+                if (target.querySelector('.login-form')) {
+                    // loader ok
+                } else {
+                    target.innerHTML = `
+                        <div class="login-container">
+                            <div class="login-form">
+                                <h2>Welcome Back</h2>
+                                <p>Choose your role to continue</p>
+                                <div class="role-selection">
+                                    <button class="role-btn" data-role="consumer" onclick="setRole('consumer', event)">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>Consumer</span>
+                                    </button>
+                                    <button class="role-btn" data-role="artisan" onclick="setRole('artisan', event)">
+                                        <i class="fas fa-palette"></i>
+                                        <span>Artisan</span>
+                                    </button>
+                                </div>
+                                <div class="login-inputs" id="login-inputs" style="display:none;">
+                                    <input type="email" placeholder="Email" id="email-input">
+                                    <input type="password" placeholder="Password" id="password-input">
+                                    <button class="login-btn" onclick="login()">Sign In</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                break;
+            default:
+                // no-op
         }
     }
 }

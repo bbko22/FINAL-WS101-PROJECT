@@ -32,13 +32,13 @@
                 <a href="#" class="nav-link cart-link" onclick="event.preventDefault(); showSection('cart')">
                     <i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="cart-count">0</span>
                 </a>
-                <a href="#" class="nav-link" onclick="showSection('profile')" id="profile-link" style="display: none;">
+                <a href="#" class="nav-link" onclick="event.preventDefault(); showSection('profile')" id="profile-link" style="display: none;">
                     <i class="fas fa-user"></i> Profile
                 </a>
-                <a href="#" class="nav-link" onclick="showSection('login')" id="login-link">
+                <a href="#" class="nav-link" onclick="event.preventDefault(); showSection('login')" id="login-link">
                     <i class="fas fa-sign-in-alt"></i> Login
                 </a>
-                <a href="#" class="nav-link" onclick="logout()" id="logout-link" style="display: none;">
+                <a href="#" class="nav-link" onclick="event.preventDefault(); logout()" id="logout-link" style="display: none;">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
             </div>
@@ -90,14 +90,13 @@
                 <!-- Product 1 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/1.jpg" alt="Maturan Pili Nuts"
+                        <img src="images/1.jpg" alt="Puto"
                             style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Maturan Pili Nuts</h3>
-                        <p class="product-price">₱200.00</p>
-                        <p class="product-description">Premium roasted pili nuts with a rich, buttery taste. Fresh,
-                            crunchy, and perfect for healthy snacking.</p>
+                        <h3 class="product-name">Puto</h3>
+                        <p class="product-price">₱6.00</p>
+                        <p class="product-description">A soft, fluffy Filipino steamed rice cake with a mildly sweet taste, perfect as a snack or paired with savory dishes.</p>
                         <button class="btn btn-primary" onclick="addToCart(1)">
                             <i class="fas fa-cart-plus"></i> Add to Cart
                         </button>
@@ -107,13 +106,12 @@
                 <!-- Product 2 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/2.jpg" alt="Taro Chips" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="images/2.jpg" alt="Rice Cake" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Taro Chips</h3>
-                        <p class="product-price">₱120.00</p>
-                        <p class="product-description">Crispy taro chips made from fresh taro roots. Lightly seasoned
-                            and perfect for snacking.</p>
+                        <h3 class="product-name">Rice Cake</h3>
+                        <p class="product-price">₱25.00</p>
+                        <p class="product-description">A soft, lightly sweet cake made from rice flour, commonly steamed or baked and enjoyed as a simple snack or dessert.</p>
                         <button class="btn btn-primary" onclick="addToCart(2)">
                             <i class="fas fa-cart-plus"></i> Add to Cart
                         </button>
@@ -123,14 +121,13 @@
                 <!-- Product 3 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/3.jpg" alt="Wooden Salad Bowl"
+                        <img src="images/3.jpg" alt="Kakanin Combo"
                             style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Pinyato</h3>
-                        <p class="product-price">₱80.00</p>
-                        <p class="product-description">Sweet and crunchy Pinyato made from peanuts and sugar. A classic
-                            Filipino snack that’s simple, tasty, and perfect for sharing.</p>
+                        <h3 class="product-name">Kakanin Combo</h3>
+                        <p class="product-price">₱120.00</p>
+                        <p class="product-description">A variety of traditional Filipino rice-based delicacies in one set, offering different flavors and textures, perfect for sharing or merienda.</p>
                         <button class="btn btn-primary" onclick="addToCart(3)">
                             <i class="fas fa-cart-plus"></i> Add to Cart
                         </button>
@@ -140,14 +137,13 @@
                 <!-- Product 4 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/4.jpg" alt="Silver Filigree Earrings"
+                        <img src="images/4.jpg" alt="Binagol"
                             style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Abaniko</h3>
-                        <p class="product-price">₱50.00</p>
-                        <p class="product-description">Lightweight and durable hand fan for instant cooling. Simple,
-                            portable, and perfect for everyday use or events.</p>
+                        <h3 class="product-name">Binagol</h3>
+                        <p class="product-price">₱70.00</p>
+                        <p class="product-description">A sweet Filipino dessert made from taro, coconut milk, and sugar, traditionally served in a coconut shell.</p>
                         <button class="btn btn-primary" onclick="addToCart(4)">
                             <i class="fas fa-cart-plus"></i> Add to Cart
                         </button>
@@ -157,14 +153,13 @@
                 <!-- Product 5 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/5.jpg" alt="Abaca Woven Basket"
+                        <img src="images/5.jpg" alt="Banig"
                             style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Handwoven Buri Hat </h3>
-                        <p class="product-price">₱100.00</p>
-                        <p class="product-description">Handwoven buri hat made from natural palm leaves. Lightweight,
-                            breathable, and ideal for sun protection and daily wear.</p>
+                        <h3 class="product-name">Banig</h3>
+                        <p class="product-price">₱200.00</p>
+                        <p class="product-description">A handwoven mat made from dried leaves, used for sleeping, sitting, or as a decorative piece.</p>
                         <button class="btn btn-primary" onclick="addToCart(5)">
                             <i class="fas fa-cart-plus"></i> Add to Cart
                         </button>
@@ -174,14 +169,13 @@
                 <!-- Product 6 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/6.jpg" alt="Malong Traditional Fabric"
+                        <img src="images/6.jpg" alt="Rixy Woven Straw Wall Basket"
                             style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Floor Polish Coconut Scrub</h3>
+                        <h3 class="product-name">Rixy Woven Straw Wall Basket</h3>
                         <p class="product-price">₱95.00</p>
-                        <p class="product-description">Eco-friendly coconut scrub for floor polishing. Tough on dirt,
-                            gentle on surfaces, and reusable.</p>
+                        <p class="product-description">A lightweight, handwoven straw basket designed for wall display, adding natural texture and decorative storage to any space.</p>
                         <button class="btn btn-primary" onclick="addToCart(6)">
                             <i class="fas fa-cart-plus"></i> Add to Cart
                         </button>
@@ -191,154 +185,151 @@
                 <!-- Product 7 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/7.jpg" alt="Capiz Shell Wind Chime"
+                        <img src="images/7.jpg" alt="Conical Hat"
                             style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Capiz Shell Wind Chime</h3>
-                        <p class="product-price">₱350.00</p>
-                        <p class="product-description">Decorative wind chime made with translucent capiz shells.</p>
+                        <h3 class="product-name">Conical Hat</h3>
+                        <p class="product-price">₱50.00</p>
+                        <p class="product-description"> A lightweight, wide-brim hat with a cone shape that provides sun and rain protection.</p>
                         <button class="btn btn-primary" onclick="addToCart(7)">
                             <i class="fas fa-cart-plus"></i> Add to Cart
                         </button>
                     </div>
                 </div>
 
-                <!-- Product 8 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/wlis.jpg" alt="Rattan Furniture Set"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Rattan Furniture Set</h3>
-                        <p class="product-price">₱1,200.00</p>
-                        <p class="product-description">Hand-woven rattan furniture perfect for home or garden.</p>
-                        <button class="btn btn-primary" onclick="addToCart(8)">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
+<!-- Product 8 - Hand Woven Lidded Basket -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="images/8.jpg" alt="Hand Woven Lidded Basket"
+            style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="product-info">
+        <h3 class="product-name">Hand Woven Lidded Basket</h3>
+        <p class="product-price">₱95.00</p>
+        <p class="product-description">A durable, handwoven basket with a fitted lid for neat storage and natural decor.</p>
+        <button class="btn btn-primary" onclick="addToCart(8)">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
+    </div>
+</div>
 
-                <!-- Product 9 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/oip/OIP.jpg" alt="Brass Decorative Plate"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Brass Decorative Plate</h3>
-                        <p class="product-price">₱280.00</p>
-                        <p class="product-description">Intricately engraved brass plate from Zamboanga artisans.</p>
-                        <button class="btn btn-primary" onclick="addToCart(9)">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
+<!-- Product 9 - Barong -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="images/9.jpg" alt="Barong"
+            style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="product-info">
+        <h3 class="product-name">Barong</h3>
+        <p class="product-price">₱295.00</p>
+        <p class="product-description">A traditional Filipino formal shirt made from lightweight fabric, worn for special occasions.</p>
+        <button class="btn btn-primary" onclick="addToCart(9)">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
+    </div>
+</div>
 
-                <!-- Product 10 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/wlis.jpg" alt="Lumpia Clay Pot"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Lumpia Clay Pot</h3>
-                        <p class="product-price">₱395.00</p>
-                        <p class="product-description">Traditional Filipino clay cooking pot for authentic lumpia.</p>
-                        <button class="btn btn-primary" onclick="addToCart(10)">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
+<!-- Product 10 - Walis Tambo -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="images/10.jpg" alt="Walis Tambo"
+            style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="product-info">
+        <h3 class="product-name">Walis Tambo</h3>
+        <p class="product-price">₱125.00</p>
+        <p class="product-description">A traditional Filipino broom made from tiger grass, used for sweeping floors.</p>
+        <button class="btn btn-primary" onclick="addToCart(10)">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
+    </div>
+</div>
 
-                <!-- Product 11 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/oip/OIP.jpg" alt="T'boli Beaded Necklace"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">T'boli Beaded Necklace</h3>
-                        <p class="product-price">₱520.00</p>
-                        <p class="product-description">Indigenous T'boli tribal beaded necklace with traditional
-                            patterns.</p>
-                        <button class="btn btn-primary" onclick="addToCart(11)">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
+<!-- Product 11 - Lambanog -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="images/11.jpg" alt="Lambanog"
+            style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="product-info">
+        <h3 class="product-name">Lambanog</h3>
+        <p class="product-price">₱350.00</p>
+        <p class="product-description">A traditional Filipino coconut wine with a strong, clear taste, often enjoyed during celebrations.</p>
+        <button class="btn btn-primary" onclick="addToCart(11)">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
+    </div>
+</div>
 
-                <!-- Product 12 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/wlis.jpg" alt="Barong Tagalog Fabric"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Barong Tagalog Fabric</h3>
-                        <p class="product-price">₱850.00</p>
-                        <p class="product-description">Premium hand-embroidered barong fabric for traditional Filipino
-                            wear.</p>
-                        <button class="btn btn-primary" onclick="addToCart(12)">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
+<!-- Product 12 - Bracelet -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="images/12.jpg" alt="Bracelet"
+            style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="product-info">
+        <h3 class="product-name">Bracelet</h3>
+        <p class="product-price">₱20.00</p>
+        <p class="product-description">A handcrafted bracelet made with unique materials and designs, adding a personal and stylish touch.</p>
+        <button class="btn btn-primary" onclick="addToCart(12)">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
+    </div>
+</div>
 
-                <!-- Product 13 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/oip/OIP.jpg" alt="Coconut Shell Bowls"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Coconut Shell Bowls</h3>
-                        <p class="product-price">₱245.00</p>
-                        <p class="product-description">Eco-friendly bowls handcrafted from natural coconut shells.</p>
-                        <button class="btn btn-primary" onclick="addToCart(13)">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
+<!-- Product 13 - Winnowing Tray -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="images/13.jpg" alt="Winnowing Tray"
+            style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="product-info">
+        <h3 class="product-name">Winnowing Tray</h3>
+        <p class="product-price">₱50.00</p>
+        <p class="product-description">A flat, woven tray used to separate grain from chaff and for food preparation.</p>
+        <button class="btn btn-primary" onclick="addToCart(13)">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
+    </div>
+</div>
 
-                <!-- Product 14 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/wlis.jpg" alt="Piña Cloth Hand Fan"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Piña Cloth Hand Fan</h3>
-                        <p class="product-price">₱380.00</p>
-                        <p class="product-description">Beautiful hand fan made from delicate piña pineapple fiber cloth.
-                        </p>
-                        <button class="btn btn-primary" onclick="addToCart(14)">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
+<!-- Product 14 - Handmade Crocheted Flowers -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="images/14.jpg" alt="Handmade Crocheted Flowers"
+            style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="product-info">
+        <h3 class="product-name">Handmade Crocheted Flowers</h3>
+        <p class="product-price">₱100.00</p>
+        <p class="product-description">Handcrafted yarn flowers with detailed stitching, perfect for decor or gifts.</p>
+        <button class="btn btn-primary" onclick="addToCart(14)">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
+    </div>
+</div>
 
-                <!-- Product 15 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/oip/OIP.jpg" alt="Inlaid Mother of Pearl Box"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Inlaid Mother of Pearl Box</h3>
-                        <p class="product-price">₱650.00</p>
-                        <p class="product-description">Ornate wooden box with mother of pearl inlay from Iloilo.</p>
-                        <button class="btn btn-primary" onclick="addToCart(15)">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
+<!-- Product 15 - Tobacco Dry Leaves -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="images/15.jpg" alt="Tobacco Dry Leaves"
+            style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="product-info">
+        <h3 class="product-name">Tobacco Dry Leaves</h3>
+        <p class="product-price">₱130.00</p>
+        <p class="product-description">Naturally dried tobacco leaves used for traditional smoking, crafting, or processing.</p>
+        <button class="btn btn-primary" onclick="addToCart(15)">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
+    </div>
+</div>
             </div>
         </div>
     </section>
 
-    <!-- Login Section -->
+    <!-- Login Section - FIXED -->
     <section id="login" class="section">
         <div class="login-container">
             <div class="login-form">
@@ -503,21 +494,13 @@
         </div>
     </div>
 
-    <!-- Cart Section -->
+    <!-- Cart Section - FIXED -->
     <section id="cart" class="section">
         <div class="cart-container">
             <h2>Shopping Cart</h2>
 
             <div class="cart-items" id="cart-items">
-                <!-- Example cart item with image -->
-                <div class="cart-item">
-                    <img src="images/wlis.jpg" alt="Product Image" class="cart-item-img">
-
-                    <div class="cart-item-details">
-                        <h4>Item Name</h4>
-                        <p>₱ Price</p>
-                    </div>
-                </div>
+                <!-- Cart items will be dynamically loaded here -->
             </div>
 
             <div class="cart-summary">
@@ -528,7 +511,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Checkout Section -->
     <section id="checkout" class="section">
@@ -601,12 +583,11 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section - FIXED -->
     <section id="about" class="section">
         <div class="about-container">
             <h2>About ArtisanHub</h2>
-            <p>ArtisanHub is a platform dedicated to connecting local artisans with customers who appreciate
-                handcrafted, unique items. We believe in supporting local creativity and sustainable commerce.</p>
+            <p>ArtisanHub is a platform dedicated to connecting local artisans with customers who appreciate handcrafted, unique items. We believe in supporting local creativity and sustainable commerce.</p>
 
             <div class="features-grid">
                 <div class="feature">
@@ -623,6 +604,14 @@
                     <i class="fas fa-heart"></i>
                     <h3>Unique Items</h3>
                     <p>Find one-of-a-kind handcrafted treasures</p>
+                </div>
+            </div>
+
+            <!-- Artisan Stories (also shown here) -->
+            <div class="stories-section about-stories">
+                <h2 class="section-title">Artisan Stories</h2>
+                <div class="stories-grid" id="about-artisan-stories">
+                    <!-- Stories will be dynamically loaded here -->
                 </div>
             </div>
         </div>
@@ -672,5 +661,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
